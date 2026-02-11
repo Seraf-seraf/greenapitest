@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GREEN-API Test Form</title>
+    <link rel="stylesheet" href="/assets/app.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="browser-mock">
+        <header class="browser-top">
+          <div class="browser-controls">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="browser-tab"></div>
+        </header>
+        <div class="browser-nav"></div>
+        <div class="browser-url"></div>
+      </section>
+
+      <section class="layout">
+        <form id="green-form" class="form-column" autocomplete="off">
+          <input id="idInstance" name="idInstance" type="text" placeholder="idInstance" required />
+          <input
+            id="apiTokenInstance"
+            name="apiTokenInstance"
+            type="text"
+            placeholder="ApiTokenInstance"
+            required
+          />
+
+          <button type="button" data-method="getSettings">getSettings</button>
+          <button type="button" data-method="getStateInstance">getStateInstance</button>
+
+          <input id="sendMessageChatId" type="text" placeholder="77771234567" />
+          <textarea id="sendMessageText" rows="3" placeholder="Hello World!"></textarea>
+          <button type="button" data-method="sendMessage">sendMessage</button>
+
+          <input id="sendFileChatId" type="text" placeholder="77771234567" />
+          <input id="sendFileUrl" type="text" placeholder="https://my.site.com/img/horse.png" />
+          <button type="button" data-method="sendFileByUrl">sendFileByUrl</button>
+        </form>
+
+        <section class="response-column">
+          <div class="response-title-row">
+            <h1>Ответ:</h1>
+            <span id="wasmStatus" class="wasm-status">WASM: loading...</span>
+          </div>
+          <pre id="response">{
+  "message": "ожидание запроса"
+}</pre>
+        </section>
+      </section>
+    </main>
+
+    <script src="/wasm_exec.js"></script>
+    <script src="/assets/app.js" defer></script>
+  </body>
+</html>
