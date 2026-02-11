@@ -1,4 +1,4 @@
-module greenapi-form
+module github.com/Seraf-seraf/greenapitest
 
 go 1.25.4
 
